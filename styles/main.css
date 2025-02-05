@@ -1,0 +1,40 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.course-selector {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.course-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.timetable-view {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 월~금 */
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.time-slot {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 8px;
+    min-height: 60px;
+}
