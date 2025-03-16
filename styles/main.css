@@ -1,40 +1,186 @@
-body {
-    font-family: 'Noto Sans KR', sans-serif;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+/* 시간표 스타일 */
+.timetable-view {
+    margin: 20px 200px;
+    overflow-x: auto;
 }
 
-.course-selector {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.course-card {
+#timetable {
+    width: 100%;
+    border-collapse: collapse;
     border: 1px solid #ddd;
+}
+
+#timetable th, #timetable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#timetable th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.timetable-cell {
+    height: 60px;
+    width:200px;
+    vertical-align: middle;
+}
+
+/* 강의 선택 영역 스타일 */
+.course-selector {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.course-item {
+    margin-bottom: 8px;
+}
+
+/* 버튼 스타일 */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* 결과 카운트 스타일 */
+.result-count {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* 필터 섹션 스타일 */
+.filter-section {
+    background-color: #f8f9fa;
     padding: 15px;
     border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.course-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+.filter-section h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
 }
 
-.timetable-view {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 월~금 */
-    gap: 8px;
-    margin-top: 30px;
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
 }
 
-.time-slot {
-    background: #f8f9fa;
-    border: 1px solid #dee2e6;
+.filter-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.filter-group select, .filter-group input {
+    width: 100%;
     padding: 8px;
-    min-height: 60px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.filter-section button {
+    margin-right: 10px;
+    padding: 8px 15px;
+}
+
+#applyFilter {
+    background-color: #4CAF50;
+}
+
+#resetFilter {
+    background-color: #f44336;
+}
+
+/* 강의 아이템 스타일 */
+.course-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: flex-start;
+}
+
+.course-item:hover {
+    background-color: #f8f9fa;
+}
+
+.course-item label {
+    margin-left: 10px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.course-name {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.course-info {
+    display: block;
+    font-size: 14px;
+    color: #666;
+}
+
+.course-category {
+    display: inline-block;
+    font-size: 12px;
+    background-color: #e9ecef;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.no-results {
+    padding: 20px;
+    text-align: center;
+    color: #666;
+}
+/* 시간표 내 강의 정보 스타일 */
+.course-info {
+    font-size: 12px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.course-name {
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.course-details {
+    font-size: 11px;
+}
+
+.course-room {
+    font-size: 10px;
+    color: #555;
 }
